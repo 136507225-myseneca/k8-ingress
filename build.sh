@@ -90,14 +90,6 @@ echo -e "${Blue}########################################################
 
 #######################################################"
 
-# Run minikube tunnel in the foreground and allow user to enter password
-minikube tunnel --background=false
-
-# Send minikube tunnel process to the background
-disown
-
-
-
 IP="127.0.0.1"
 
  HOSTNAME="bar.local"
@@ -135,11 +127,11 @@ echo $password | minikube tunnel &
 
 echo "minikube tunnel running in the background"
 
-# echo -e "${Blue}########################################################
+echo -e "${Blue}########################################################
 
-# ## Checking if service is up and running 
+## Checking if service is up and running 
 
-# #######################################################"
+#######################################################"
 
 
 url="http://bar.local/foo"
