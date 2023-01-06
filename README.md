@@ -6,7 +6,7 @@ This sequence assumes
 - that your machine has
 
   - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/),
-  - [docker](https://docs.docker.com/engine/install/),
+  - [docker](https://docs.docker.com/engine/install/)
 
     installed and able to access your cluster.
 
@@ -18,14 +18,19 @@ Run the bellow script
 
 ```
 .\build.sh
-
 ```
 
-- minikube start --vm=true
+The shell script command, take care of building,
+packaging and deploying your application, configuring the minikube cluster, and ensuring
+the web server endpoint is available.
+
+The comands bellow will be executed
+
+- minikube start
 - minikube addons enable ingress
 - minikube addons enable ingress-dns
-- docker build --tag node-docker .
 - eval $(minikube docker-env)
+- docker build --tag node-docker .
 - kubectl apply -f app.delopyment.yml
 - kubectl apply -f app-service.yml
 - minikube tunnel
